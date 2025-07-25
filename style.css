@@ -188,20 +188,9 @@ body {
     width: 100%;
 }
 
-.navbar:not(.scrolled) .logo-dark {
-    display: none !important;
-}
-
-.navbar:not(.scrolled) .logo-white {
-    display: block !important;
-}
-
-.navbar.scrolled .logo-white {
-    display: none !important;
-}
-
-.navbar.scrolled .logo-dark {
-    display: block !important;
+.single-logo {
+    max-height: 70px; /* Set your desired maximum height for the logo */
+    /* display: block; is implied by img-fluid or default block display for img */
 }
 
 /* ===== HERO SECTION ===== */
