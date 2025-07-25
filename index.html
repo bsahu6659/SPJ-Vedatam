@@ -794,6 +794,60 @@
     //       ).hide();
     //     });
 
+    document
+  .getElementById("enquiryForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const modalBody = document.querySelector("#enquiryModal .modal-body");
+    const modalTitle = document.querySelector("#enquiryModal .modal-title");
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        modalTitle.textContent = "Thank You!";
+        modalBody.innerHTML = `
+          <div class="text-center py-4">
+            <h3>Thank you for your enquiry!</h3>
+            <p>We'll get back to you shortly.</p>           
+          </div>
+        `;
+        setTimeout(() => {
+          window.location.reload();
+        }, 6000);
+      } else {
+        const errorData = await response.json();
+        modalTitle.textContent = "Error";
+        modalBody.innerHTML = `
+          <div class="text-center py-4">
+            <h3>Something went wrong!</h3>
+            <p>Please try again later. ${errorData.message || ''}</p>
+            <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">Close</button>
+          </div>
+        `;
+      }
+    } catch (error) {
+      modalTitle.textContent = "Error";
+      modalBody.innerHTML = `
+        <div class="text-center py-4">
+          <h3>An unexpected error occurred!</h3>
+          <p>Please check your internet connection and try again.</p>
+          <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">Close</button>
+        </div>
+      `;
+      console.error("Form submission error:", error);
+    }
+  });
+
       // Animate on scroll
       const observerOptions = {
         threshold: 0.1,
