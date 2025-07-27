@@ -881,6 +881,13 @@ body {
     .sales-key-points-section {
         padding: 60px 0;
     }
+     .hero-content {
+        padding-top: 80px; /* Adjust this value as needed based on your navbar's height */
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Existing rule, keeping it for context */
+    }
 }
 @media (max-width: 768px) {
     .sales-key-points-section {
@@ -892,7 +899,16 @@ body {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1280px) {
+    .hero-content {
+        padding-top: 50px;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero-content {
+        padding-top: 100px; /* Potentially more padding for smaller devices if needed */
+    }
     .hero-title {
         font-size: 2.5rem;
     }
