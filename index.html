@@ -44,25 +44,28 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#offerings">Offerings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#amenities">Amenities</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#location">Location</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+    <li class="nav-item">
+      <a class="nav-link" href="#about">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#offerings">Offerings</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#amenities">Amenities</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#location">Location</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#enquiryModal" data-action="download-brochure">Download Brochure</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#contact">Contact</a>
+    </li>
+  </ul>
+</div>
     </div>
 </nav>
 
@@ -605,24 +608,24 @@
               today.
             </p>
             <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-              <button
-                class="btn btn-primary btn-lg"
-                data-bs-toggle="modal"
-                data-bs-target="#enquiryModal"
-              >
-                <i class="fas fa-calendar-check"></i> Schedule a Callback
-              </button>
-              <a
-                href="https://wa.me/919911556462"
-                target="_blank"
-                class="btn btn-success btn-lg"
-              >
-                <i class="fab fa-whatsapp"></i> WhatsApp Us
-              </a>
-              <!-- <a href="https://drive.google.com/uc?export=download&id=1cZEOXOeY8lrz5ptwD2yYT7WOPHVgnOdX" class="btn btn-outline-primary btn-lg" download>
-                            <i class="fas fa-file-download"></i> Download Floor Plan
-                        </a> -->
-            </div>
+  <button
+    class="btn btn-primary btn-lg"
+    data-bs-toggle="modal"
+    data-bs-target="#enquiryModal"
+  >
+    <i class="fas fa-calendar-check"></i> Schedule a Callback
+  </button>
+  <a
+    href="https://wa.me/919911556462"
+    target="_blank"
+    class="btn btn-success btn-lg"
+  >
+    <i class="fab fa-whatsapp"></i> WhatsApp Us
+  </a>
+  <a href="#" class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enquiryModal" data-action="download-brochure">
+      <i class="fas fa-file-download"></i> Download Brochure
+  </a>
+</div>
           </div>
         </div>
       </div>
@@ -718,156 +721,210 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form action="https://api.web3forms.com/submit" method="POST" id="enquiryForm">
-    <input type="hidden" name="access_key" value="e72a1268-0be7-47f4-95f0-f40a6883e81e">
+  <div id="modalDownloadMessage" class="alert alert-info text-center" style="display: none;">
+      <strong>Fill the form first to download the brochure.</strong>
+  </div>
+  <form action="https://api.web3forms.com/submit" method="POST" id="enquiryForm">
+      <input type="hidden" name="access_key" value="e72a1268-0be7-47f4-95f0-f40a6883e81e">
 
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Full Name *</label>
-            <input type="text" name="name" class="form-control" required />
-        </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Phone Number *</label>
-            <input type="tel" name="phone_number" class="form-control" required />
-        </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Email Address</label>
-            <input type="email" name="email" class="form-control" />
-        </div>
-        <div class="col-md-6 mb-3">
-            <label class="form-label">Interested In</label>
-            <select name="interested_in" class="form-select">
-                <option>Ground Floor Shops</option>
-                <option>Premium Food Court</option>
-                <option>General Inquiry</option>
-            </select>
-        </div>
-        </div>
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-    <div class="text-center">
-        <button type="submit" class="btn btn-primary btn-lg">
-            <i class="fas fa-paper-plane"></i> Send Enquiry
-        </button>
-    </div>
-</form>
+      <div class="row">
+          <div class="col-md-6 mb-3">
+              <label class="form-label">Full Name *</label>
+              <input type="text" name="name" class="form-control" required />
           </div>
+          <div class="col-md-6 mb-3">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" name="phone_number" class="form-control" required />
+          </div>
+          <div class="col-md-6 mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" name="email" class="form-control" />
+          </div>
+          <div class="col-md-6 mb-3">
+              <label class="form-label">Interested In</label>
+              <select name="interested_in" class="form-select">
+                  <option>Ground Floor Shops</option>
+                  <option>Premium Food Court</option>
+                  <option>General Inquiry</option>
+              </select>
+          </div>
+          </div>
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+      <div class="text-center">
+          <button type="submit" class="btn btn-primary btn-lg">
+              <i class="fas fa-paper-plane"></i> Send Enquiry
+          </button>
+      </div>
+  </form>
+</div>
         </div>
       </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Get modal elements
+    const enquiryModalEl = document.getElementById("enquiryModal");
+    const enquiryForm = document.getElementById("enquiryForm");
+    const modalDownloadMessage = document.getElementById("modalDownloadMessage");
+    const modalTitle = document.querySelector("#enquiryModal .modal-title");
+    const modalBody = document.querySelector("#enquiryModal .modal-body");
 
-      // Navbar scroll effect
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
+    // Create a bootstrap modal instance to control it via JS
+    const enquiryModal = new bootstrap.Modal(enquiryModalEl);
+
+    // 1. AUTO-POPUP MODAL AFTER 10 SECONDS
+    setTimeout(() => {
+      // Check if a modal is already open to avoid popping up over an open modal
+      if (!document.body.classList.contains('modal-open')) {
+        enquiryModal.show();
+      }
+    }, 10000); // 10 seconds in milliseconds
+
+    // 2. SMOOTH SCROLLING FOR ANCHOR LINKS
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        // Ensure it's a valid internal link before preventing default and scrolling
+        if (href.length > 1 && document.querySelector(href)) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
         }
       });
+    });
 
-    //   // Form submission
-    //   document
-    //     .getElementById("enquiryForm")
-    //     .addEventListener("submit", function (e) {
-    //       e.preventDefault();
-    //       alert("Thank you for your enquiry! We will contact you soon.");
-    //       bootstrap.Modal.getInstance(
-    //         document.getElementById("enquiryModal")
-    //       ).hide();
-    //     });
-
-    document
-  .getElementById("enquiryForm")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const modalBody = document.querySelector("#enquiryModal .modal-body");
-    const modalTitle = document.querySelector("#enquiryModal .modal-title");
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (response.ok) {
-        modalTitle.textContent = "Thank You!";
-        modalBody.innerHTML = `
-          <div class="text-center py-4">
-            <h3>Thank you for your enquiry!</h3>
-            <p>We'll get back to you shortly.</p>           
-          </div>
-        `;
-        setTimeout(() => {
-          window.location.reload();
-        }, 6000);
+    // 3. NAVBAR SCROLL EFFECT
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
       } else {
-        const errorData = await response.json();
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // 4. FUNCTION TO RESET MODAL TO ITS GENERAL STATE
+    function resetModalState() {
+      modalDownloadMessage.style.display = 'none';
+      enquiryForm.removeAttribute('data-download-url');
+    }
+
+    // 5. HANDLE MODAL BEHAVIOR (DOWNLOAD VS. GENERAL) BEFORE IT OPENS
+    enquiryModalEl.addEventListener('show.bs.modal', function (event) {
+      // The element that triggered the modal (if any)
+      const button = event.relatedTarget;
+
+      // Check if the trigger element has the 'download-brochure' action
+      if (button && button.getAttribute('data-action') === 'download-brochure') {
+        modalDownloadMessage.style.display = 'block';
+        // Set an attribute on the form to remember to download the PDF on submission
+        enquiryForm.setAttribute('data-download-url', 'assets/SPJ_Vedatam_Brochure.pdf'); //
+      } else {
+        // If it's a general enquiry or opened via timeout, reset its state
+        resetModalState();
+      }
+    });
+
+    // 6. HELPER FUNCTION TO TRIGGER THE PDF DOWNLOAD OR OPEN IN NEW TAB
+function triggerDownload(url) {
+  const a = document.createElement('a');
+  a.href = url;
+  a.target = '_blank'; // Ensures the link opens in a new tab
+  a.download = url.split('/').pop(); // Suggests to the browser to download the file
+  document.body.appendChild(a);
+  a.click(); // The browser will now attempt to download or open in a new tab
+  document.body.removeChild(a);
+}
+
+    // 7. FORM SUBMISSION LOGIC
+    enquiryForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      const downloadUrl = form.getAttribute('data-download-url');
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          modalTitle.textContent = "Thank You!";
+          let successMessage = `
+            <div class="text-center py-4">
+              <h3>Thank you for your enquiry!</h3>
+              <p>We'll get back to you shortly.</p>
+            </div>`;
+
+          // If a download is pending, trigger it and update the success message
+          if (downloadUrl) {
+            triggerDownload(downloadUrl);
+            successMessage = `
+              <div class="text-center py-4">
+                <h3>Thank you!</h3>
+                <p>Your brochure download should start automatically.</p>
+                <p class="mt-3 small">If it doesn't, please check your popup blocker.</p>
+              </div>`;
+            // Clear the download flag after triggering
+            resetModalState();
+          }
+
+          modalBody.innerHTML = successMessage;
+          setTimeout(() => {
+            window.location.reload();
+          }, 6000);
+
+        } else {
+          // Handle submission error
+          const errorData = await response.json();
+          modalTitle.textContent = "Error";
+          modalBody.innerHTML = `
+            <div class="text-center py-4">
+              <h3>Something went wrong!</h3>
+              <p>Please try again later. ${errorData.message || ''}</p>
+              <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">Close</button>
+            </div>`;
+        }
+      } catch (error) {
+        // Handle network error
         modalTitle.textContent = "Error";
         modalBody.innerHTML = `
           <div class="text-center py-4">
-            <h3>Something went wrong!</h3>
-            <p>Please try again later. ${errorData.message || ''}</p>
+            <h3>An unexpected error occurred!</h3>
+            <p>Please check your internet connection and try again.</p>
             <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">Close</button>
-          </div>
-        `;
+          </div>`;
+        console.error("Form submission error:", error);
       }
-    } catch (error) {
-      modalTitle.textContent = "Error";
-      modalBody.innerHTML = `
-        <div class="text-center py-4">
-          <h3>An unexpected error occurred!</h3>
-          <p>Please check your internet connection and try again.</p>
-          <button type="button" class="btn btn-primary mt-3" data-bs-dismiss="modal">Close</button>
-        </div>
-      `;
-      console.error("Form submission error:", error);
-    }
-  });
+    });
 
-      // Animate on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-in");
-          }
-        });
-      }, observerOptions);
-
-      document
-        .querySelectorAll(".offering-card, .amenity-item, .about-content")
-        .forEach((el) => {
-          observer.observe(el);
-        });
-    </script>
+    // 8. ANIMATE ON SCROLL (Existing functionality)
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll(".offering-card, .amenity-item, .about-content").forEach((el) => {
+      observer.observe(el);
+    });
+</script>
     <a href="https://wa.me/919911556462" class="whatsapp-float" target="_blank">
       <i class="fab fa-whatsapp"></i>
     </a>
